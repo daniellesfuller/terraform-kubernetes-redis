@@ -6,10 +6,13 @@ Get ip of pods
 - kubectl get pods -o wide
 
 Commands to run afterwards to add new nodes to cluster
+
 Cluster meet IP address and port
 - kubectl exec -it redis-cluster-xxxxxxx-xxxxx  -- redis-cli cluster meet (node ip) (node port)
+
 Cluster nodes
 - kubectl exec -it redis-cluster-xxxxxxx-xxxxx  -- redis-cli cluster nodes
+
 Cluster replicate node id
 - kubectl exec -it redis-cluster-xxxxxxx-xxxxx  -- redis-cli cluster replicate (node id of master to replicate from)
 
