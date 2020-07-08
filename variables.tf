@@ -1,29 +1,29 @@
 variable "name" {
-    default = "redis-cluster"
+  default = "redis-cluster"
 }
 
 variable "client_port" {
-    default = 6379
+  default = 6379
 }
 
 variable "gossip_port" {
-    default = 16379
+  default = 16379
 }
 
 variable "replicas" {
-    default = 6
+  default = 6
 }
 
 variable "service_type" {
-    default = "NodePort"
+  default = "NodePort"
 }
 
 variable "image" {
-    default = "redis"
+  default = "redis"
 }
 
 variable "namespace" {
-    default = "redis"
+  default = "redis"
 }
 
 variable "resources" {

@@ -1,6 +1,6 @@
 resource "kubernetes_service" "this" {
   metadata {
-    name = var.name
+    name      = var.name
     namespace = var.namespace
   }
 
@@ -27,7 +27,7 @@ resource "kubernetes_service" "this" {
 
 resource "kubernetes_config_map" "this" {
   metadata {
-    name = var.name
+    name      = var.name
     namespace = var.namespace
   }
 
@@ -40,7 +40,7 @@ resource "kubernetes_config_map" "this" {
 
 resource "kubernetes_deployment" "this" {
   metadata {
-    name = var.name
+    name      = var.name
     namespace = var.namespace
 
     labels = {
@@ -78,7 +78,7 @@ resource "kubernetes_deployment" "this" {
           name    = var.name
           image   = var.image
           command = ["/conf/update-node.sh", "redis-server", "/conf/redis.conf"]
-          
+
           resources {
             requests {
               cpu    = var.resources.requests.cpu
