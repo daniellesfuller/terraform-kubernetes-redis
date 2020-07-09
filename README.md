@@ -9,12 +9,8 @@ Commands to run afterwards to add new nodes to cluster
 
 Cluster meet IP address and port
 - kubectl exec -it redis-cluster-xxxxxxx-xxxxx  -- redis-cli cluster meet (node ip) (node port)
-<<<<<<< HEAD
-**Cluster nodes
-=======
 
 Cluster nodes
->>>>>>> acda7ec2aa9bf248e06552aff9a113463535210a
 - kubectl exec -it redis-cluster-xxxxxxx-xxxxx  -- redis-cli cluster nodes
 
 Cluster replicate node id
