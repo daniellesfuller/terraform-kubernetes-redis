@@ -1,7 +1,7 @@
 resource "kubernetes_namespace" "this" {
-    metadata {
-        name = var.namespace
-    }
+  metadata {
+    name = var.namespace
+  }
 }
 
 resource "kubernetes_service" "this" {
