@@ -1,7 +1,13 @@
+resource "kubernetes_namespace" "this" {
+    metadata {
+        name = var.namespace
+    }
+}
+
 resource "kubernetes_service" "this" {
   metadata {
     name      = var.name
-    namespace = var.namespace
+    namespace = kubernetes_namespace.this.metadata[0].name
   }
 
   spec {
@@ -28,7 +34,7 @@ resource "kubernetes_service" "this" {
 resource "kubernetes_config_map" "this" {
   metadata {
     name      = var.name
-    namespace = var.namespace
+    namespace = kubernetes_namespace.this.metadata[0].name
   }
 
   data = {
@@ -41,7 +47,7 @@ resource "kubernetes_config_map" "this" {
 resource "kubernetes_deployment" "this" {
   metadata {
     name      = var.name
-    namespace = var.namespace
+    namespace = kubernetes_namespace.this.metadata[0].name
 
     labels = {
       app = var.name
